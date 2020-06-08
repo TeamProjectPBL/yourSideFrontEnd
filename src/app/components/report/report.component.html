@@ -46,7 +46,10 @@
         <div class="col-md-6 col-lg-4">
             <p class="category">Provide the Full name of the perpetrator</p>
             <div class="form-group">
-                <input type="text" value="" placeholder="Full name" class="form-control" #perpname />
+                <input type="text" value="" placeholder="Full name" class="form-control" #perpname/>
+                <div *ngIf="submitted && invalidPerp" class="invalid">
+                    Perpetrator name is required.
+                </div>
             </div>
         </div>
     </div>
@@ -56,6 +59,9 @@
             <p class="category">Provide the Full name of the victim</p>
             <div class="form-group">
                 <input type="text" value="" placeholder="Full name" class="form-control" [disabled]="role === 'victim'" #victimname />
+                <div *ngIf="submitted && invalidVic" class="invalid">
+                    Victim name is required.
+                </div>
             </div>
         </div>
     </div>
