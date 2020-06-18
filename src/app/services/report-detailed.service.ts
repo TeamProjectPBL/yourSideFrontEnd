@@ -15,17 +15,17 @@ export class ReportDetailedService {
   constructor(private http: HttpClient) { }
 
   public getReport = (id: string): Observable<ReportModel> => {
-    const url = `https://yoursidebackend.azurewebsites.net/restApi/reports/${id}`;
+    const url = `http://localhost:8080/restApi/reports/${id}`;
     return this.http.get<ReportModel>(url);
   }
 
   public markStatus(id: string, status: string) {
-    const url = `https://yoursidebackend.azurewebsites.net/restApi/reports/${id}`;
+    const url = `http://localhost:8080/restApi/reports/${id}`;
     this.http.patch(url, {"status": status});
   }
 
   public getMessages(reportid: number) {
-    const url = `https://yoursidebackend.azurewebsites.net/restApi/messages?reportid=${reportid}`;
+    const url = `http://localhost:8080/restApi/messages?reportid=${reportid}`;
     return this.http.get<MessageModel[]>(url);
   }
 }

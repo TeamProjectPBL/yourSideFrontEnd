@@ -12,7 +12,7 @@ const httpOptions = {
 })
 export class TeacherProfilesService {
 
-    private teachersProfilesUrl = 'https://yoursidebackend.azurewebsites.net/restApi/users/getTeachersProfiles';
+    private teachersProfilesUrl = 'http://localhost:8080/restApi/users/getTeachersProfiles';
 
     constructor(private http: HttpClient) {
     }
